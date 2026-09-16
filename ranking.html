@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ranking — BL Ranking</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/ranking.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="nav-item" href="equipos.html" data-target="equipos">
+            <span class="nav-icon"><svg viewBox="0 0 300 300">
+                    <path fill-rule="evenodd" fill="currentColor"
+                        d="M150,40 L254.6,116 L214.7,239 L85.3,239 L45.4,116 Z M150,112 L186.15,138.25 L172.35,180.75 L127.65,180.75 L113.85,138.25 Z" />
+                </svg></span>
+            <span class="nav-label">EQUIPOS</span>
+        </a>
+        <a class="nav-item" href="ranking.html" data-target="ranking">
+            <span class="nav-icon"><svg viewBox="0 0 300 300">
+                    <path fill-rule="evenodd" fill="currentColor"
+                        d="M150,40 L254.6,116 L214.7,239 L85.3,239 L45.4,116 Z M150,112 L186.15,138.25 L172.35,180.75 L127.65,180.75 L113.85,138.25 Z" />
+                </svg></span>
+            <span class="nav-label">RANKING</span>
+        </a>
+        <a class="nav-item" href="calendario.html" data-target="calendario">
+            <span class="nav-icon"><svg viewBox="0 0 300 300">
+                    <path fill-rule="evenodd" fill="currentColor"
+                        d="M150,40 L254.6,116 L214.7,239 L85.3,239 L45.4,116 Z M150,112 L186.15,138.25 L172.35,180.75 L127.65,180.75 L113.85,138.25 Z" />
+                </svg></span>
+            <span class="nav-label">CALENDARIO</span>
+        </a>
+        <a class="nav-item" href="jugadores.html" data-target="jugadores">
+            <span class="nav-icon"><svg viewBox="0 0 300 300">
+                    <path fill-rule="evenodd" fill="currentColor"
+                        d="M150,40 L254.6,116 L214.7,239 L85.3,239 L45.4,116 Z M150,112 L186.15,138.25 L172.35,180.75 L127.65,180.75 L113.85,138.25 Z" />
+                </svg></span>
+            <span class="nav-label">JUGADORES</span>
+        </a>
+        <a class="nav-item" href="admin.html" data-target="admin">
+            <span class="nav-icon"><svg viewBox="0 0 300 300">
+                    <path fill-rule="evenodd" fill="currentColor"
+                        d="M150,40 L254.6,116 L214.7,239 L85.3,239 L45.4,116 Z M150,112 L186.15,138.25 L172.35,180.75 L127.65,180.75 L113.85,138.25 Z" />
+                </svg></span>
+            <span class="nav-label">ADMIN</span>
+        </a>
+    </nav>
+
+    <div class="scene" id="ranking">
+        <div class="logo-watermark">
+            <svg viewBox="0 0 300 300">
+                <g class="logo-rotor">
+                    <polygon points="150,40 254.6,116 186.15,138.25 150,112" fill="#2946e0" stroke="#f4f6fb"
+                        stroke-width="4" stroke-linejoin="round" />
+                    <polygon points="254.6,116 214.7,239 172.35,180.75 186.15,138.25" fill="#2946e0" stroke="#f4f6fb"
+                        stroke-width="4" stroke-linejoin="round" />
+                    <polygon points="214.7,239 85.3,239 127.65,180.75 172.35,180.75" fill="#2946e0" stroke="#f4f6fb"
+                        stroke-width="4" stroke-linejoin="round" />
+                    <polygon points="85.3,239 45.4,116 113.85,138.25 127.65,180.75" fill="#2946e0" stroke="#f4f6fb"
+                        stroke-width="4" stroke-linejoin="round" />
+                    <polygon points="45.4,116 150,40 150,112 113.85,138.25" fill="#2946e0" stroke="#f4f6fb"
+                        stroke-width="4" stroke-linejoin="round" />
+                </g>
+                <polygon points="150,112 186.15,138.25 172.35,180.75 127.65,180.75 113.85,138.25" fill="#f4f6fb" />
+                <text x="150" y="276" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900"
+                    font-style="italic" font-size="36" fill="#2946e0">ブルーロック</text>
+                <text x="150" y="291" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700"
+                    font-size="10" letter-spacing="1" fill="#2946e0">BLUELOCK</text>
+            </svg>
+        </div>
+
+        <div class="floor-clip">
+            <div class="floor"></div>
+        </div>
+        <div class="flat-grid"></div>
+        <div class="crosshatch"></div>
+        <div class="laser"></div>
+        <div class="chevrons"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="side-rail"></div>
+        <div class="rail-dot rd1"></div>
+        <div class="rail-dot rd2"></div>
+        <div class="rail-dot rd3"></div>
+        <div class="rail-dot rd4"></div>
+        <div class="frame"></div>
+
+        <div class="rig">
+            <div class="part p1"></div>
+            <div class="part p2"></div>
+            <div class="part p3"></div>
+            <div class="part red p4"></div>
+            <div class="part red p5"></div>
+            <div class="part p6"></div>
+        </div>
+
+        <div class="board">
+            <div class="dial"></div>
+            <div class="plate-row">
+                <div style="width:38px;"></div>
+                <div class="header-plate">BL RANKING</div>
+            </div>
+
+            <div id="rowsEl"></div>
+        </div>
+    </div>
+
+    <!-- Modal de detalle -->
+    <div class="detail-overlay" id="detailOverlay">
+        <div class="detail-wrapper">
+            <div class="detail-big-image" id="detailBigImage"></div>
+
+            <div class="detail-card">
+                <button class="detail-close" id="detailCloseBtn" type="button" aria-label="Cerrar">&times;</button>
+                <div class="detail-image">
+                    <div class="detail-pent-border"></div>
+                    <div class="detail-pent-fill" role="img" aria-label="icono" id="detailIcon">&lt;icono&gt;</div>
+                </div>
+                <div class="detail-info">
+                    <div class="detail-rank-row">
+                        <span class="detail-flame"></span>
+                        <span class="detail-label">BL RANKING</span>
+                    </div>
+                    <div class="detail-rank-num" id="detailRank">01</div>
+                    <span class="detail-tag">入札</span>
+                    <div class="detail-name" id="detailName">NOMBRE</div>
+                    <div class="detail-yen" id="detailYen">¥ 0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/ranking.js"></script>
+</body>
+
+</html>

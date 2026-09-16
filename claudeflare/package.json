@@ -1,0 +1,13 @@
+{
+  "name": "ranking-privado",
+  "version": "1.0.0",
+  "description": "Servidor local privado para BL Ranking, expuesto vía Cloudflare Tunnel",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-basic-auth": "^1.2.1"
+  }
+}

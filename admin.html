@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Admin — BL Ranking</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<nav class="navbar">
+  <a class="nav-item" href="equipos.html" data-target="equipos">
+    <span class="nav-icon"><svg viewBox="0 0 300 300"><path fill-rule="evenodd" fill="currentColor" d="M150,40 L254.6,116 L214.7,239 L85.3,239 L45.4,116 Z M150,112 L186.15,138.25 L172.35,180.75 L127.65,180.75 L113.85,138.25 Z"/></svg></span>
+    <span class="nav-label">EQUIPOS</span>
+  </a>
+  <a class="nav-item" href="ranking.html" data-target="ranking">
+    <span class="nav-icon"><svg viewBox="0 0 300 300"><path fill-rule="evenodd" fill="currentColor" d="M150,40 L254.6,116 L214.7,239 L85.3,239 L45.4,116 Z M150,112 L186.15,138.25 L172.35,180.75 L127.65,180.75 L113.85,138.25 Z"/></svg></span>
+    <span class="nav-label">RANKING</span>
+  </a>
+  <a class="nav-item" href="calendario.html" data-target="calendario">
+    <span class="nav-icon"><svg viewBox="0 0 300 300"><path fill-rule="evenodd" fill="currentColor" d="M150,40 L254.6,116 L214.7,239 L85.3,239 L45.4,116 Z M150,112 L186.15,138.25 L172.35,180.75 L127.65,180.75 L113.85,138.25 Z"/></svg></span>
+    <span class="nav-label">CALENDARIO</span>
+  </a>
+  <a class="nav-item" href="jugadores.html" data-target="jugadores">
+    <span class="nav-icon"><svg viewBox="0 0 300 300"><path fill-rule="evenodd" fill="currentColor" d="M150,40 L254.6,116 L214.7,239 L85.3,239 L45.4,116 Z M150,112 L186.15,138.25 L172.35,180.75 L127.65,180.75 L113.85,138.25 Z"/></svg></span>
+    <span class="nav-label">JUGADORES</span>
+  </a>
+</nav>
+
+<section class="admin-login" id="adminLogin">
+  <div class="admin-login-card">
+    <span class="admin-login-icon">
+      <svg viewBox="0 0 300 300"><path fill-rule="evenodd" fill="currentColor" d="M150,40 L254.6,116 L214.7,239 L85.3,239 L45.4,116 Z M150,112 L186.15,138.25 L172.35,180.75 L127.65,180.75 L113.85,138.25 Z"/></svg>
+    </span>
+    <h1 class="admin-login-title">ACCESO ADMIN</h1>
+    <span class="admin-login-tag">PANEL PRIVADO</span>
+
+    <form id="adminLoginForm" class="admin-login-form" autocomplete="off">
+      <div class="crud-field">
+        <label for="adminPass">Clave de acceso</label>
+        <input type="password" id="adminPass" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="crud-btn crud-btn-solid">Ingresar</button>
+      <p class="admin-login-error" id="adminLoginError" role="alert"></p>
+    </form>
+  </div>
+</section>
+
+<section class="admin-panel" id="adminPanel" hidden>
+  <div class="crud-wrap">
+    <header class="admin-header">
+      <div>
+        <h1 class="info-title" style="margin-bottom:4px;">PANEL ADMIN</h1>
+        <span class="info-tag">GESTIÓN DEL RANKING</span>
+      </div>
+      <button type="button" id="adminLogoutBtn" class="crud-btn crud-btn-ghost admin-logout-btn">Cerrar sesión</button>
+    </header>
+
+    <form id="playerForm" class="crud-form">
+      <h3 id="playerFormTitle" class="crud-form-title">NUEVO JUGADOR</h3>
+      <div class="crud-field">
+        <label for="playerName">Nombre</label>
+        <input type="text" id="playerName" maxlength="18" required autocomplete="off">
+      </div>
+      <div class="crud-field">
+        <label for="playerValue">Valor (¥)</label>
+        <input type="number" id="playerValue" min="0" step="1" required autocomplete="off">
+      </div>
+      <div class="crud-field">
+        <label for="playerImgFile">Imagen (ícono, tarjeta)</label>
+        <input type="file" id="playerImgFile" accept="image/*">
+        <img id="playerImgPreview" class="crud-preview" style="display:none;" alt="">
+      </div>
+      <div class="crud-field">
+        <label for="playerBigImgFile">Imagen grande (detalle, opcional)</label>
+        <input type="file" id="playerBigImgFile" accept="image/*">
+        <img id="playerBigImgPreview" class="crud-preview" style="display:none;" alt="">
+      </div>
+      <div class="crud-form-actions">
+        <button type="button" id="playerCancelBtn" class="crud-btn crud-btn-ghost" style="display:none;">Cancelar</button>
+        <button type="submit" id="playerSubmitBtn" class="crud-btn crud-btn-solid">Agregar</button>
+      </div>
+    </form>
+
+    <div class="crud-form-actions crud-form-actions--row">
+      <button type="button" id="exportJsonBtn" class="crud-btn crud-btn-ghost">Exportar JSON</button>
+      <label for="importJsonFile" class="crud-btn crud-btn-ghost" style="cursor:pointer; margin:0; text-align:center;">Importar JSON</label>
+      <input type="file" id="importJsonFile" accept="application/json,.json" style="display:none;">
+    </div>
+
+    <div id="playersGrid" class="player-grid"></div>
+  </div>
+</section>
+
+<script src="js/data.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
